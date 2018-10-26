@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet id="init_table" author="yangcheng">
+		<comment>init tables.</comment>
+        <sqlFile
+			encoding="utf8"
+            path="init_table.sql"
+            relativeToChangelogFile="true"/>
+		<rollback>
+
+		</rollback>
+	</changeSet>
+	<changeSet id="init_procedure" author="yangcheng">
+		<comment>init_procedure.</comment>
+        <sqlFile
+			endDelimiter="\nGO" 
+			encoding="utf8"
+            path="init_procedure.sql"
+            relativeToChangelogFile="true"
+            stripComments="true"/>
+		<rollback>
+
+		</rollback>
+	</changeSet>
+</databaseChangeLog>
